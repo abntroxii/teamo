@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te Amo ❤️</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    background: radial-gradient(circle, #1a1a40, #000);
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* Estrellas */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+    background-size:80px 80px;
+    animation: estrellas 20s linear infinite;
+}
+
+@keyframes estrellas{
+    from{transform:translateY(0);}
+    to{transform:translateY(-100px);}
+}
+
+.contenedor{
+    position:relative;
+    width:500px;
+    height:500px;
+}
+
+/* Corazón */
+.corazon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:140px;
+    height:140px;
+    background:#ff1744;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    animation: latido 1s infinite;
+}
+
+.corazon::before,
+.corazon::after{
+    content:"";
+    position:absolute;
+    width:140px;
+    height:140px;
+    background:#ff1744;
+    border-radius:50%;
+}
+
+.corazon::before{
+    top:-70px;
+    left:0;
+}
+
+.corazon::after{
+    left:70px;
+    top:0;
+}
+
+@keyframes latido{
+    0%,100%{
+        transform:translate(-50%,-50%) rotate(-45deg) scale(1);
+    }
+    50%{
+        transform:translate(-50%,-50%) rotate(-45deg) scale(1.1);
+    }
+}
+
+.texto-centro{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:30px;
+    font-weight:bold;
+    z-index:2;
+}
+
+/* Frases girando */
+.orbita{
+    position:absolute;
+    width:100%;
+    height:100%;
+    animation:girar 20s linear infinite;
+}
+
+.frase{
+    position:absolute;
+    font-size:18px;
+    text-shadow:0 0 10px #ff69b4;
+}
+
+.f1{top:0; left:50%; transform:translateX(-50%);}
+.f2{top:20%; right:0;}
+.f3{top:50%; right:0;}
+.f4{bottom:20%; right:0;}
+.f5{bottom:0; left:50%; transform:translateX(-50%);}
+.f6{bottom:20%; left:0;}
+.f7{top:50%; left:0;}
+.f8{top:20%; left:0;}
+
+@keyframes girar{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <div class="orbita">
+        <div class="frase f1">Eres mi universo ✨</div>
+        <div class="frase f2">Siempre contigo ❤️</div>
+        <div class="frase f3">Te amo mucho 💖</div>
+        <div class="frase f4">Mi persona favorita 🌹</div>
+        <div class="frase f5">Por siempre tú 💕</div>
+        <div class="frase f6">Mi felicidad 😊</div>
+        <div class="frase f7">Eres especial 💫</div>
+        <div class="frase f8">Mi corazón es tuyo 💘</div>
+    </div>
+
+    <div class="corazon"></div>
+    <div class="texto-centro">TE AMO</div>
+
+</div>
+
+</body>
+</html>
